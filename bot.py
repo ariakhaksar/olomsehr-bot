@@ -4,16 +4,16 @@ from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, fil
 
 # دستور /start
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text("سلام ببعی 🌸 من ربات سید جعفر حسینی هستم و آماده‌ام!")
+    await update.message.reply_text("سلام 🌹 من ادمین مجموعه علوم غریبه هستم، چطور می‌توانم به شما کمک کنم؟")
 
-# پاسخ به پیام‌های عادی (اختیاری)
+# پاسخ به پیام‌های عادی
 async def echo(update: Update, context: ContextTypes.DEFAULT_TYPE):
     text = update.message.text
-    await update.message.reply_text(f"شما گفتی: {text}")
+    await update.message.reply_text(f"شما گفتید: {text}")
 
 # اجرای ربات
 def main():
-    token = os.getenv("BOT_TOKEN")  # توکن از GitHub Secrets گرفته می‌شود
+    token = os.getenv("BOT_TOKEN")
     app = ApplicationBuilder().token(token).build()
 
     app.add_handler(CommandHandler("start", start))
@@ -23,4 +23,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-  Update bot.py
